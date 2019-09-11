@@ -1,5 +1,4 @@
 FROM library/centos:latest
-MAINTAINER Justin Garrison <justinleegarrison@gmail.com>
 
 RUN yum -y update && \
   yum install -y openssl openssl-devel nss-devel \
@@ -15,4 +14,9 @@ RUN ./configure && make clean && make -s
 
 WORKDIR /root/JohnTheRipper/run
 
-ENTRYPOINT ["./john"]
+ADD ./target_pwd.txt ./target_pwd.txt
+ADD ./rockyou.txt ./rockyou.txt
+ADD ./stat_dic.txt ./stat_dic.txt
+ADD ./spells.txt ./spells.txt
+
+CMD ["bash"]
