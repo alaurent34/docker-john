@@ -12,5 +12,5 @@ If you want the absolute best performance you should clone this repo and run `do
 Crack local passwords of host system
 
 ```
-docker run -v ${PWD}:/run john --show --format=raw-md5 target_pwd.txt
+docker run -v ${PWD}:/run john --show --format=raw-md5 /run/target_pwd.txt
 ```
